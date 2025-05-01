@@ -1,1 +1,52 @@
-
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Gamemodstudios Mod Metadata",
+  "description": "Schema for .gmsmod mod metadata files used by Gamemodstudios.",
+  "type": "object",
+  "required": ["Mod_name", "Author", "Version", "Game", "Description", "Supported_versions"],
+  "properties": {
+    "Mod_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The name of the mod."
+    },
+    "Author": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The author or creator of the mod."
+    },
+    "Version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "The version of the mod (semantic versioning)."
+    },
+    "Game": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The target game for this mod."
+    },
+    "Description": {
+      "type": "string",
+      "description": "A short description of what the mod does."
+    },
+    "Dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Mod ID or name this mod depends on."
+      },
+      "default": [],
+      "description": "Optional list of mod dependencies."
+    },
+    "Supported_versions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Game versions supported by this mod."
+      },
+      "minItems": 1,
+      "description": "List of supported game versions."
+    }
+  },
+  "additionalProperties": false
+}
