@@ -53,14 +53,5 @@
     }
   },
   
-  "additionalProperties": false,
-  
-    "required": [
-    "Mod_name",
-    "Author",
-    "Version",
-    "Game",
-    "Description",
-    "Supported_versions"
-  ]
+  "additionalProperties": false
 }
