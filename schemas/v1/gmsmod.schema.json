@@ -20,6 +20,10 @@
       "pattern": "^\\d+\\.\\d+\\.\\d+$",
       "description": "The version of the mod (semantic versioning)."
     },
+    "icon": {
+      "type": "string",
+      "description": "mod icon"
+    },
     "Game": {
       "type": "string",
       "minLength": 1,
@@ -48,5 +52,15 @@
       "description": "List of supported game versions."
     }
   },
-  "additionalProperties": false
+  
+  "additionalProperties": false,
+  
+    "required": [
+    "Mod_name",
+    "Author",
+    "Version",
+    "Game",
+    "Description",
+    "Supported_versions"
+  ]
 }
